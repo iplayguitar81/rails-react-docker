@@ -1,0 +1,3 @@
+# README
+This is a sample Rails application utilizing Docker.
+Test this out to see how fast we build...
