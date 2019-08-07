@@ -1,12 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= @news.title.titleize %>
-</p>
+<h1><%= @news.title.titleize %></h1>
 
-<p class="text-muted">
-  <%= @news.subtitle.titleize %>
-</p>
+<h3 class="text-muted"><%= @news.subtitle.titleize %></h3>
 
   <% if(!@news.image.attached?) %>
 

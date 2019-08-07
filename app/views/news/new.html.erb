@@ -1,5 +1,7 @@
-<h1>New News</h1>
+<h1>Create News</h1>
 
 <%= render 'form', news: @news %>
 
-<%= link_to 'Back', news_index_path %>
+<%= link_to news_index_path, :class => "btn btn-dark btn-md" do %>
+<i class="fas fa-newspaper"></i> Back to News
+<% end %>

@@ -11,37 +11,37 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, :class => "form-control" %>
   </div>
 
-  <div class="field">
+<div class="form-group">
     <%= form.label :subtitle %>
-    <%= form.text_field :subtitle %>
+    <%= form.text_field :subtitle, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :body %>
-    <%= form.text_area :body %>
+    <%= form.text_area :body, :class => "form-control" %>
   </div>
 
-<div class="field">
+<div class="form-group">
   <%= form.label :image %>
-  <%= form.file_field :image %>
+  <%= form.file_field :image, :class => "form-control" %>
 </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :published %>
-    <%= form.date_select :published %>
+    <%= form.date_select :published, :class => "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :updated %>
-    <%= form.date_select :updated %>
+    <%= form.date_select :updated, :class => "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit  :class => "btn btn-success btn-lg" %>
   </div>
 <% end %>

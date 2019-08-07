@@ -1,6 +1,13 @@
-<h1>Editing News</h1>
+<h1>Editing <br/><span class='text-muted'><%= @news.title.titleize %></span></h1>
 
 <%= render 'form', news: @news %>
 
-<%= link_to 'Show', @news %> |
-<%= link_to 'Back', news_index_path %>
+<br/>
+
+<%= link_to @news, :class => "btn btn-success btn-md" do %>
+<i class="fas fa-eye"></i> Show
+<% end %>
+
+<%= link_to news_index_path, :class => "btn btn-dark btn-md" do %>
+<i class="fas fa-newspaper"></i> Back to News
+<% end %>
