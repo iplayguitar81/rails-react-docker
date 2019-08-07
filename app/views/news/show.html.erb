@@ -1,38 +1,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @news.title %>
+  <%= @news.title.titleize %>
 </p>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @news.subtitle %>
+<p class="text-muted">
+  <%= @news.subtitle.titleize %>
 </p>
 
   <% if(!@news.image.attached?) %>
 
       <p>No Image</p>
       <% else %>
-
             <%= image_tag @news.image.variant( resize: "400x200", charcoal: ".10", border: "5%x5%", flop: true), :class => "img-fluid" %>
-
             <% end %>
 
 <p>
-  <strong>Body:</strong>
   <%= @news.body %>
 </p>
 
 <p>
   <strong>Published:</strong>
-  <%= @news.published %>
+ <%= @news.published.strftime("%B #{@news.published.day.ordinalize}, %Y") %>
 </p>
 
 <p>
   <strong>Updated:</strong>
-  <%= @news.updated %>
+  <%= @news.updated.strftime("%B #{@news.updated.day.ordinalize}, %Y") %>
 </p>
 
-<%= link_to 'Edit', edit_news_path(@news) %> |
-<%= link_to 'Back', news_index_path %>
+
+<%= link_to edit_news_path(@news), :class => "btn btn-success btn-md" do %>
+<i class="fas fa-pencil-alt"></i> Edit
+<% end %>
+
+<%= link_to edit_news_path(@news), :class => "btn btn-dark btn-md" do %>
+<i class="fas fa-newspaper"></i> All News
+<% end %>
+
+
+<%= link_to root_path, :class => "btn btn-primary btn-md" do %>
+<i class="fas fa-home"></i> Home
+<% end %>

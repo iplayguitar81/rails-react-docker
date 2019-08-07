@@ -8,24 +8,25 @@
   
 <div class="row">
         
-
-
-
-
         <div class="col-lg-4 col-md-12 col-sm-12 col-12 order-1 order-lg-1 order-sm-1">
 			<% if(!news.image.attached?) %>
 
 			<p>Image is null</p>
+
 			<% else %>
 
+            <%= link_to news do %>
+            
             <%= image_tag news.image.variant( resize: "400x200", charcoal: ".10", border: "5%x5%", flop: true), :class => "img-fluid" %>
+            
+            <% end %>
 
             <% end %>
 
         </div>
 
         <div class="col-lg-8 col-md-12  col-sm-12 col-12 order-2 order-lg-2 order-sm-2">
-            <span class=""><%= news.published.strftime("%B %d, %Y") %></span>
+            <span class=""><%= news.published.strftime("%B #{news.published.day.ordinalize}, %Y") %></span>
             <br>
             <br>
             <h2 class="verlag-bold"><%= news.title.titleize %></h2>
