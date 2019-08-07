@@ -8,12 +8,27 @@
   
 <div class="row">
         
-        <div class="col-lg-4 col-md-12 col-sm-12 col-12 order-1 order-lg-1 order-sm-1">
-			<% if(!news.image.attached?) %>
 
-			<p>Image is null</p>
+<% if(!news.image.attached?) %>
+<div class="col-lg-12 col-md-12  col-sm-12 col-12">
+            <span class=""><%= news.published.strftime("%B #{news.published.day.ordinalize}, %Y") %></span>
+            <br>
+            <br>
+            <h2 class="verlag-bold"><%= news.title.titleize %></h2>
+            <h3 class="text-muted"><%= news.subtitle.titleize %></h5>
+            <p class="">
+            <%= news.body %>
+            </p>
+            <p>
+                <%= link_to 'Read More...', news, :class => 'btn btn-dark' %>
+            </p>
+        </div>
+    </div>
 
-			<% else %>
+
+            <% else %>
+        <div class="col-lg-2 col-md-12 col-sm-12 col-12 order-1 order-lg-1 order-sm-1">
+
 
             <%= link_to news do %>
             
@@ -21,11 +36,11 @@
             
             <% end %>
 
-            <% end %>
+           
 
         </div>
 
-        <div class="col-lg-8 col-md-12  col-sm-12 col-12 order-2 order-lg-2 order-sm-2">
+        <div class="col-lg-10 col-md-12  col-sm-12 col-12 order-2 order-lg-2 order-sm-2">
             <span class=""><%= news.published.strftime("%B #{news.published.day.ordinalize}, %Y") %></span>
             <br>
             <br>
@@ -42,7 +57,7 @@
 		<br/>
         <hr/>
 
-
+ <% end %>
     <% end %>
 </div>
 
