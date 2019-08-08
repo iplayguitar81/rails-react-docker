@@ -30,7 +30,10 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'webpacker', '~> 3.5'
 
-gem 'responders'
+#added after from this tutorials suggestion:  https://sipsandbits.com/2019/03/01/how-to-react-on-rails/
+gem 'react-rails'
+
+#gem 'responders'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
