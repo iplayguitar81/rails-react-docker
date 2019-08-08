@@ -3,7 +3,14 @@ import PropTypes from "prop-types"
 class NewsList extends React.Component {
   render () {
   	const { stories } = this.props;
+
+
   	console.log(this.props);
+  	console.log(this.props.Image);
+
+  	//let imageSrc = stories.image !== null 
+  	//https://sipsandbits.com/2019/03/01/how-to-react-on-rails/
+
     return (
       <React.Fragment>
 
@@ -25,6 +32,7 @@ const Story = ({story}) => {
       <p>Image path: {story.image}</p>
       <div className="story-content">
         <h3>{story.title}</h3>
+        <p>{story.published}</p>
         {story.body}
 
         <hr/>
