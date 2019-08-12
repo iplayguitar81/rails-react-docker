@@ -38,6 +38,11 @@ gem 'react-rails'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 
+# Devise and dependencies
+gem 'devise'
+gem 'hpricot'
+gem 'ruby_parser'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
