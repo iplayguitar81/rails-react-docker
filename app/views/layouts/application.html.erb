@@ -27,29 +27,65 @@
   <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="/"><%= image_tag("/images/rails-128.png", :style => 'width: 50px;') %> Rails Dockerized</a>
+  <a class="navbar-brand" href="/"><%= image_tag("/images/rails-128.png", :style => 'width: 50px;') %> Dockerized</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           News
         </a>
+        
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="/news">News Hub</a>
           <a class="dropdown-item" href="/news/new">Create Article</a>
         </div>
+
       </li>
+
+      <% if current_user %>
+
+        <li class="nav-item">
+
+          <%= link_to destroy_user_session_path, class: "nav-link", :method => :delete do %>
+         Sign Out
+         <i class="fas fa-sign-out-alt"></i>
+
+         <% end %>
+        </li>
+
+
+      <% else %>
+
+        <li class="nav-item">
+
+        <%= link_to new_user_session_path, class: "nav-link" do %>
+          Login
+          <i class="fas fa-sign-in-alt"></i>
+          <% end %>
+        
+        </li>
+
+
+      <% end %>
+
     </ul>
   </div>
 </nav>
 
+
+
 <div class="container">
+
+  <% if notice %>
+  <p class="text-light bg-dark text-center" id="notice"><i class="fas fa-exclamation-triangle"></i> <%= notice %></p>
+
+  <% end %>
 
 <%= yield %>
 
