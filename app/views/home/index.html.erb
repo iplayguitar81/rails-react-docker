@@ -19,8 +19,11 @@
             <p class="">
             <%= news.body %>
             </p>
-            <p>
-                <%= link_to 'Read More...', news, :class => 'btn btn-dark' %>
+             <p>
+                <%= link_to news, :class => 'btn btn-dark' do %>
+                Read More
+                <i class="fas fa-book-reader"></i>
+                <% end %>
             </p>
         </div>
     </div>
@@ -50,7 +53,10 @@
 			<%= news.body %>
 		    </p>
             <p>
-			    <%= link_to 'Read More...', news, :class => 'btn btn-dark' %>
+                <%= link_to news, :class => 'btn btn-dark' do %>
+                Read More
+                <i class="fas fa-book-reader"></i>
+                <% end %>
 		    </p>
         </div>
     </div>
